@@ -15,8 +15,17 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Fix PHP code style issues
-        uses: aglipanci/laravel-pint-action@1.0.0
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@v1
+
+      - name: Run ECS
+        run: ./vendor/bin/ecs --fix
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
