@@ -1,4 +1,4 @@
-name: run-tests
+name: Running phpunit
 
 on:
   push:
