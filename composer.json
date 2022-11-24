@@ -43,7 +43,6 @@
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/psalm",
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit",
         "format": "vendor/bin/ecs --fix"
     },
     "config": {
@@ -55,10 +54,7 @@
         "laravel": {
             "providers": [
                 "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
