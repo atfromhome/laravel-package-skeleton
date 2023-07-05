@@ -1,9 +1,9 @@
-name: Running ECS
+name: Running Laravel Pint
 
 on:
   push:
     paths:
-      - '**.php'
+      - "**.php"
 
 jobs:
   php-code-styling:
@@ -18,14 +18,14 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: "8.1"
           coverage: none
 
       - name: Install composer dependencies
         uses: ramsey/composer-install@v1
 
-      - name: Run ECS
-        run: ./vendor/bin/ecs --fix
+      - name: Run Laravel Pint
+        run: ./vendor/bin/pint
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4

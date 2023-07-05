@@ -170,7 +170,6 @@ $variableName = lcfirst($className);
 $description = ask('Package description', "This is my package {$packageSlug}");
 
 $usePsalm = confirm('Enable Psalm?', true);
-$useEasyCodingStandard = confirm('Enable Easy Coding Standard?', true);
 $useDependabot = confirm('Enable Dependabot?', true);
 $useUpdateChangelogWorkflow = confirm('Use automatic changelog updater workflow?', true);
 
@@ -182,7 +181,6 @@ writeln("Namespace  : {$vendorNamespace}\\{$className}");
 writeln("Class name : {$className}");
 writeln('---');
 writeln('Packages & Utilities');
-writeln('Use Easy Coding Standard  : '.($useEasyCodingStandard ? 'yes' : 'no'));
 writeln('Use Psalm                 : '.($usePsalm ? 'yes' : 'no'));
 writeln('Use Dependabot            : '.($useDependabot ? 'yes' : 'no'));
 writeln('Use Auto-Changelog        : '.($useUpdateChangelogWorkflow ? 'yes' : 'no'));
@@ -222,17 +220,6 @@ foreach ($files as $file) {
         str_contains($file, 'README.md') => remove_readme_paragraphs($file),
         default => [],
     };
-}
-
-if (! $useEasyCodingStandard) {
-    safeUnlink(__DIR__.'/.github/workflows/fix-php-code-style-issues.yml');
-    safeUnlink(__DIR__.'/ecs.php');
-
-    remove_composer_deps([
-        'symplify/easy-coding-standard',
-    ]);
-
-    remove_composer_script('format');
 }
 
 if (! $usePsalm) {

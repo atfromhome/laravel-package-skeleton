@@ -1,17 +1,21 @@
-name: Running psalm
+name: Running Psalm
 
 on:
   push:
     paths:
       - '**.php'
-      - 'phpstan.neon.dist'
+      - 'psalm.xml'
+      - 'psalm-baseline.xml'
 
 jobs:
-  phpstan:
-    name: phpstan
+  psalm:
+    name: Psalm
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -20,7 +24,7 @@ jobs:
           coverage: none
 
       - name: Install composer dependencies
-        uses: ramsey/composer-install@v1
+        uses: ramsey/composer-install@v2
 
       - name: Run Psalm
         run: ./vendor/bin/psalm --output-format=github
