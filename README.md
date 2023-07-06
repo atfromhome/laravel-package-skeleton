@@ -1,6 +1,9 @@
 # :package_description
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_name/:package_slug)
+[![PHPUnit](https://github.com/:vendor_slug/:package_slug/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/:vendor_slug/:package_slug/actions/workflows/run-tests.yml)
+[![Laravel Pint](https://github.com/:vendor_slug/:package_slug/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/:vendor_slug/:package_slug/actions/workflows/fix-php-code-style-issues.yml)
+[![Psalm](https://github.com/:vendor_slug/:package_slug/actions/workflows/run-psalm-static-analyst.yml/badge.svg?branch=main)](https://github.com/:vendor_slug/:package_slug/actions/workflows/run-psalm-static-analyst.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_name/:package_slug)
 <!--delete-->
 ---
