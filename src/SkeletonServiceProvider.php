@@ -17,6 +17,6 @@ class SkeletonServiceProvider extends PackageServiceProvider
         $package
             ->name('skeleton')
             ->hasConfigFile()
-            ->hasMigration('create_skeleton_table');
+            ->hasMigration('create_package_slug_without_prefix_table');
     }
 }
