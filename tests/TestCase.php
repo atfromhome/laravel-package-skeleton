@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VendorName\Skeleton\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use VendorName\Skeleton\SkeletonServiceProvider;
 
